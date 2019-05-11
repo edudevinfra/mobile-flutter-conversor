@@ -27,7 +27,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     AppBar appBar = AppBar(
       title: Text('Conversor de Temperatura'),
       centerTitle: true,
@@ -40,10 +39,13 @@ class _HomeState extends State<Home> {
       ],
     );
 
-    Image imgLogo = Image.asset("assets/images/logo.png", height: 120, width: 120,);
+    Image imgLogo = Image.asset(
+      "assets/images/logo.png",
+      height: 120,
+      width: 120,
+    );
 
-
-   /* Icon icon = Icon(
+    /* Icon icon = Icon(
       Icons.add_call,
       size: 100,
       color: Colors.blue,
@@ -72,13 +74,14 @@ class _HomeState extends State<Home> {
     );
 
     TextFormField tmpFahrenheit = TextFormField(
-      enabled: false, // bloqueia campo para editar
+      enabled: false,
+      // bloqueia campo para editar
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-          labelText: "Graus Fahrenheit",
-          labelStyle: TextStyle(color: Colors.black, fontSize: 20),
-      border: OutlineInputBorder(),
-      suffixText: "ºF",
+        labelText: "Graus Fahrenheit",
+        labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        border: OutlineInputBorder(),
+        suffixText: "ºF",
       ),
       textAlign: TextAlign.center,
       style: styleField,
@@ -97,12 +100,16 @@ class _HomeState extends State<Home> {
         }
         FocusScope.of(context).requestFocus(FocusNode());
       },
-      child: Text("Calcular"),
+      child: Text("CALCULAR",
+          style: new TextStyle(
+            fontSize: 20.0,
+            color: const Color(0xFFffffff),
+          )),
       color: Colors.blue[400],
     );
 
     Container containerBtn = Container(
-      height: 200,
+      height: 60,
       child: btnCalcular,
     );
 
@@ -113,8 +120,10 @@ class _HomeState extends State<Home> {
 
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[//icon, tmpCelsius, tmpFahrenheit, padding
-        imgLogo, tmpCelsius, Divider(), tmpFahrenheit, padding ],
+      children: <Widget>[
+        //icon, tmpCelsius, tmpFahrenheit, padding
+        imgLogo, tmpCelsius, Divider(), tmpFahrenheit, padding
+      ],
     );
 
     Form form = Form(
